@@ -1,0 +1,80 @@
+# Variables
+# Variables types and Python Syntax
+
+# ints, floats, booleans, strings
+    #Int: they represent whole numbers. Can be + or -. Once turned into a decimal, becomes a float.
+    #Floats: Are decimal numbers, can be a whole number.
+    #Booleans: True or False values
+    #Strings: Anything that is in between the "" or the ''. Ex: of strings are text, messages, names, stuff like that.
+
+# Basic variable Syntax
+    #name = value
+
+# Hulk Exercise:
+    #Example of Int:
+        age = 32
+    #Example of Float:
+        rage_factor = 0.5
+    #Example of Boolean:
+        is_in_hulk_form = false
+    #Example of string:
+        name = "Bruce Banner"
+
+#Practice.py Practice:
+    age = 49
+    rage_factor = 0.5
+    is_in_hulk_form = False
+    name = "Bruce Banner"
+    print(age, rage_factor,is_in_hulk_form,name)
+
+    print(type(age))
+    print(type(rage_factor))
+    print(type(is_in_hulk_form))
+    print(type(name))
+
+# Variable operators and operations
+# Type Conversion
+    #Assignment Operators:
+        This is the equal (=) or (not) operator
+    #Arithmetic Operators:
+        + , - , * , / , % , // ,+= , -= , *= , /=
+        "%" is divide with remainder
+        "//" is divide without remainder
+    #Conditional Operators:
+        > , >= , < , <= , == , != , is
+        == is testing if both values are equal
+        != is testing if both are not equal
+        % divides providing the remainder
+        // divides leaving out the remainder
+
+#Practice.py Practice:
+age = 49
+rage_factor = 0.5
+is_in_hulk_form = False
+name = "Bruce Banner"
+print(age, rage_factor,is_in_hulk_form,name)
+
+
+#Assignment Operators
+is_not_in_hulk_form = not is_in_hulk_form
+print(is_not_in_hulk_form)
+new_age = age + 1
+print(new_age)
+
+full_name = name + " - the hulk"
+print(full_name)
+
+#Arithmetic Operators
+print(50 % 7)
+print(50 // 7)
+
+age += 1
+print(age)
+
+#Conditional Operators
+print(5 > 2)
+print(5 < 2)
+print(5 == 2)
+print(5 != 2)
+
+age = bool(age)

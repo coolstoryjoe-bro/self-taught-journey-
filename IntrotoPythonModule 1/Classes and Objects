@@ -1,0 +1,50 @@
+# Classes and objects
+# An OBJECT is an entity within the code that maintains and keeps tracks of its state and has certain behaviors.
+# "State" a set of attributes that help define an object. "Behaviors" are typically actions that can be taken on that /
+# object usually to modify the state  in some way.
+# Example of Object: In a game setting it could be "Bushes", "Houses", "Water" Etc. Basically they have physical /
+# 'attributes or state' and have 'behaviors' that correspond to those attributes ie. bush sway.
+# A CLASS a blue print that specifies all that we need to know about the object.
+
+# Create a custom class
+class SuperHero: # This is the general superhero class that can be used to define other heroes.
+
+    team = "Avengers" # This is the default value for all superheroes
+
+    def __init__(self, name, health): # This is an initializer, special functions that takes several parameter names.
+        self.name = name # These are the properties and attributes of these superheroes.
+        self.health = health
+
+    def take_damage(self, amount):
+        self.health -= amount
+
+# Create a couple of instances of the class (objects)
+thor = SuperHero("Thor", 100) #
+print(thor.name)
+print(thor.health)
+# thor.health -= 25
+thor.take_damage(63)
+print(thor.health)
+print(thor.team)
+
+# Subclasses and Superclasses
+# Subclass is a child of the Superclass
+
+class Hulk(SuperHero): # Subclasses can be created with "class" and then the variable(superclass)
+
+    rage = 50
+    team = "Revengers"
+
+    def __init__(self, name, health):
+        super().__init__(name, health)
+
+    def take_damage(self, amount):
+        self.rage += amount
+        super().take_damage(amount)
+
+hulk = Hulk("Hulk", 100)
+print(hulk.rage)
+hulk.take_damage(30)
+print(hulk.rage)
+print(hulk.health)
+print(hulk.team)

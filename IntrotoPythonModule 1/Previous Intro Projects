@@ -1,0 +1,56 @@
+avengers_team = ["Iron Man", "Captain America", "Hawkeye", "Black Widow", "Hulk", "Thor", "All the rest"]
+avengers_second_team = ["Ant Man", "Black Panther", "Scarlet Witch", "Vision", "War Machine", "Bucky", "The Guardians"]
+villians_second_team = ["The aliens"]
+
+battery_life = input("Enter Battery Life Here (#): ")
+avengers = input("Are the Avengers present in battle? (1 = T/2 = F) ")
+avengers_2 = input("Are the rest of the Avengers present in battle? (1 = T/2 = F) ")
+villian = input("Is Thanos present in battle? (1 = T/2 = F) ")
+villian_2 = input("Is the Chitari present serving Thanos? (1 = T/2 = F) ")
+
+try:
+    amount_of_energy = int(battery_life)
+    avengers_present = int(avengers)
+    avenger_2_present = int(avengers_2)
+    villian_present = int(villian)
+    villian_2_present = int(villian_2)
+    likelihood_of_winning = None
+
+    if amount_of_energy > 75 and avengers_present < 2 and avenger_2_present < 2 and villian_present < 2:
+        likelihood_of_winning = 'You are likely to win.'
+
+    elif amount_of_energy < 75 and avengers_present < 2 and villian_present < 2 and villian_2_present < 2 and avenger_2_present > 1:
+        likelihood_of_winning = 'You are dead'
+
+    elif amount_of_energy < 75 and avengers_present < 2 and villian_present < 2 and villian_2_present < 2 and avenger_2_present < 2:
+        likelihood_of_winning = 'It will be a hard battle but you won.'
+
+    elif amount_of_energy >75 and avenger_2_present < 2 and villian_present < 2:
+        likelihood_of_winning = 'You will fight a good battle but will lose.'
+
+    elif amount_of_energy == 0:
+        likelihood_of_winning = 'You are dead'
+
+    elif amount_of_energy == str():
+        likelihood_of_winning = 'Something went wrong with the answers! Please follow the direction accordingly.'
+
+    else:
+        likelihood_of_winning = 'You are dead'
+
+    print('Your likelihood of winning: ', likelihood_of_winning)
+
+except ValueError:
+    print('Something went wrong with the answers! Please follow the direction accordingly.')
+
+
+
+
+
+howmanyfucksdoigive = 2.0
+doigiveafuck = False
+
+while howmanyfucksdoigive > 0.1:
+    print("F*** u")
+    howmanyfucksdoigive -= 0.1
+
+print('Never mind')

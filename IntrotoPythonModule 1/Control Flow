@@ -1,0 +1,46 @@
+# Control Flow
+# Allows us perform various tests that return a true or false value and then we get to --->
+# execute certain blocks of code based on the result.
+# This means that if a result returns True, we execute code block A, --->
+# if the result returns false, we execute code block B.
+
+# If Statements
+# Example: if condition == true: execute code block here
+# if, else, elif, and/or, not
+
+rage_factor = 1.0
+feeling = None
+is_under_attack = False
+
+if rage_factor > 0.5 and is_under_attack:
+    feeling = 'like it is time to smash!'
+elif rage_factor > 0.5 and not is_under_attack:
+    feeling = 'angry'
+elif rage_factor == 0.5:
+    feeling = 'a little bit angry'
+else:
+    feeling = 'calm'
+
+print('Bruce is feeling', feeling)
+
+
+# While and for-in loops
+# A loop gives us a mechanism by which we can execute a statement or block of statements many many times even
+# if we write it only once.
+# "While" is the code I use for implement the loop.
+# "Break" and "Continue" statements are there to stop a possible infinite loop.
+# "Continue" skips over a loop code and continues onto the next code.
+# "Break" breaks the loops and adds a contingency cap for your loop.
+#For-In loops is the variable that is in between "for" and "in" will be considered the variable for the list of
+# variables after "in".
+
+while rage_factor > 0.1:
+    continue
+    print('Hulk is on a rampage')
+    rage_factor -= 0.1
+
+print('Hulk has turned back into Bruce Banner')
+
+list_of_names = ["Thor", "Black Widow", "Hawkeye"]
+for name in list_of_names
+    print(name)

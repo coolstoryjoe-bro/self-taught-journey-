@@ -1,0 +1,42 @@
+# functions:
+# Example:
+# def name():
+#   function body
+# name()
+
+# When you put in the term "Global" the variable that isn't supposed to exist in a function after executing the /
+# function will continue existing.
+
+rage_factor = 0.7
+is_in_hulk_form = False
+
+def increase_rage():
+    global rage_factor
+    global is_in_hulk_form
+    rage_factor += 0.1
+    if rage_factor > 0.9:
+        is_in_hulk_form = True
+    print('hulk is getting angrier')
+
+# increase_rage()
+# increase_rage()
+# increase_rage()
+# print(rage_factor)
+# print(is_in_hulk_form)
+
+# functions without parameters or return values:
+# def name(parameter):
+# The parameter goes inside of the parenthesis.
+# Example: def increase_rage(parameter):
+
+def increase_rage_2(by_amount):
+    global rage_factor
+    rage_factor += by_amount
+    print('Hulk is getting angier')
+    if rage_factor > 0.9:
+        return True
+    else:
+        return False
+
+is_in_hulk_form = increase_rage_2(0.3)
+print(is_in_hulk_form)

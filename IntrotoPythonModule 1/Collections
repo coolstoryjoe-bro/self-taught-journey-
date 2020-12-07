@@ -1,0 +1,51 @@
+# Collections
+# Convenient ways to store multiple values in a single location. IE: A list of names or numbers.
+# Can also get attributes from lists.
+
+
+# Tuples ()
+# Example: Name = (val1, val2)
+# An index is a name or value within the parenthesis such as "Thor". The indexes always start with 0 and "Thor" is index 0 while "Hulk" is index 1.
+
+first_three_names = ("Thor", "Hulk", "Black Widow")
+first_three_names = ("Hawkeye", "Captain America", "Iron Man")
+print(first_three_names)
+print(first_three_names[0])
+print(len(first_three_names))
+# first_three_names[0] = "" # not allowed.
+
+
+# Lists and List Operations []
+# Lists will allow us to add or remove elements to and from a list. We can delete elements and insert elements and so forth.
+
+list_of_names = ["Thor", "Hulk", "Black Widow", "Hawkeye", "Captain America", "Iron Man"]
+print(list_of_names[0])
+list_of_names[0] = 'Nick Fury'
+print(list_of_names)
+print(list_of_names.pop(5))
+print(list_of_names)
+list_of_names.append("Thor")
+list_of_names.append("Iron Man")
+print(list_of_names)
+print(len(list_of_names))
+
+print(list_of_names[:6])
+print(list_of_names[4:])
+
+
+# Dictionaries and Operations {}
+# In the sense of a dictionary, the word would be the key, and the definition would be the value.
+# The first word is a "word" or "key", while the word after the colon is the "definition" or "value".
+
+name_dict = {"Hulk": "Bruce Banner", "Captain America": "Steve Rogers", "Iron Man": "Tony Stark"}
+print(name_dict)
+
+print(name_dict['Hulk'])
+name_dict['asdfsdf'] = 'Yo mama'
+
+print(name_dict)
+
+print(name_dict["Captain America"])
+print(name_dict)
+print(name_dict.keys())
+print(name_dict.values())
