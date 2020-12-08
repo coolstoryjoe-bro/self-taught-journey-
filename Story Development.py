@@ -1,16 +1,19 @@
 # This is a casual route story:
+# Chapter 1 project Dev:
+
 
 input_gender = input("Enter your gender: ")
 input_fname = input("Enter your first name: ")
 input_lname = input("Enter your last name: ")
 occupation_list = ['aristocrat', '']
-gender = ""
+gender = []
 player_name = input_fname
 player_lname = input_lname
 
 player_0 = [gender, player_name]
 player_inventory = []
 player_status = {}
+gender.append(input_gender)
 
 options_chapter_1 = {
     "options_0": {"A": "Take the pathway nonchalantly.",
@@ -168,6 +171,20 @@ class rangedweapons:
         self.thrownrock = thrownrock
         self.musket = musket
 
+class magic:
+    def __init__(self, fire, ice, water, earth, void, light, dark, electric, necromancy, goddess, demon,):
+        self.fire = fire
+        self.ice = ice
+        self.water = water
+        self.earth = earth
+        self.void = void
+        self.light = light
+        self.dark = dark
+        self.electric = electric
+        self.necromancy = necromancy
+        self.goddess = goddess
+        self.demon = demon
+
 print("\n___Introduction___")
 print(f"\nYour name is {player_name.title()}, and your gender is {gender.title()}. You will begin your journey"
       f"in this new world. \nPlease make careful choices as it will affect the course of the story.")
@@ -265,7 +282,7 @@ while outside_tomb:
                     player_status['level'] = 1
                     player_status['experience'] = 35
                     print(player_status)
-                    print(player_inventory)
+                    print(f"Your inventory: {player_inventory}")
                     break
                 elif cfight_boar == "no":
                     print(f"You decided to sneak around the boar. Your sneak skill isn't high enough to completely"
@@ -290,7 +307,7 @@ while outside_tomb:
                     player_status['level'] = 1
                     player_status['experience'] = 35
                     print(player_status)
-                    print(player_inventory)
+                    print(f"Your inventory: {player_inventory}")
                     break
                 elif cfight_boar == "no":
                     print(f"You decided to sneak around the boar. Your sneak skill isn't high enough to completely"
@@ -323,6 +340,20 @@ while outside_tomb:
 
 print("You continue down the overgrown path that is hidden away by dense brush. "
       "\nYou tear through the dense brush to be introduced to a well maintained road paved in brick.")
-print("You are given the choice to get left or right.")
-tomb_street = input('Left or Right? (L/R) ')
+print("\nYou are given the choice to get left or right.")
+
+while True:
+    tomb_street = input('\nLeft or Right? (L/R) ')
+    if tomb_street.lower() == "l" or tomb_street.upper() == "L":
+        print(f"You have chosen to go left. You continue to walk down the well paved path. After about an hour of "
+              f"walking a city comes into view. You decide it would be optimal to visit the city.")
+        break
+    elif tomb_street.lower() == "r" or tomb_street.upper() == "R":
+        print(f"You have chose to go right. You continue to walk down the well paved path. Nothing has come even"
+              f" after three hours of walking. You see a wagon with a woman and her daughter up front.")
+        wagon_0 = input(f"Do you confront the people? (yes/no)")
+        if wagon_0 == 'yes':
+            print(f"You confront the wagon with the woman and daughter. The woman stops the wagon visibly anxious"
+                  f" at your sudden appearance. \nShe reaches inside the wagon and brings out a blade.")
+
 
