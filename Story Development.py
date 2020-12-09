@@ -15,16 +15,19 @@ player_inventory = []
 player_status = {}
 gender.append(input_gender)
 
+# These are the player options throughout chapter 1:
+# Each option is different according to the story and what the player chooses.
 options_chapter_1 = {
     "options_0": {"A": "Take the pathway nonchalantly.",
                   "B": '"Ooooo. is that a bird?"',
                   "C": "Search around for a bit.",
                   "D": "Take the pathway carefully.",
                   },
-    "options_1": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
+    "options_1": {"A": "I'm just a wandering person, no reason to be frightened of me, "
+                       "do you mind if I tag along?",
+                  "B": "Action: *Gets on the ground and prostrates* 'Please take me to the nearby town!'",
+                  "C": "No need to fear me. I just came from a tomb 2 hours this way, I don't know where to go.",
+                  "D": "Action: *You run away in the opposite direction.*",
                   },
     "options_2": {"A": "",
                   "B": "",
@@ -186,7 +189,7 @@ class magic:
         self.demon = demon
 
 print("\n___Introduction___")
-print(f"\nYour name is {player_name.title()}, and your gender is {gender.title()}. You will begin your journey"
+print(f"\nYour name is {player_name.title()}, and your gender is {gender}. You will begin your journey"
       f"in this new world. \nPlease make careful choices as it will affect the course of the story.")
 
 print("\n\n___Chapter 1: Awakening___\nYou wake up inside of a tomb. You wake up confused not knowing what is going on."
@@ -217,7 +220,7 @@ while outside_tomb:
     print(options_chapter_1['options_0'])
     out_tomb = input(f"Now that you're outside of that tomb; what do you do?\n(A/B/C/D) ")
     if out_tomb.lower() == "a" or out_tomb.upper() == "A":
-            print(f"You walk down the pathway without a care in the world as you just woke up from a tomb. "
+            print(f"\nYou walk down the pathway without a care in the world as you just woke up from a tomb. "
                   f"\n You're chilling but your lack of care has alerted a wild boar on the overgrown path.")
             after_choiceA = input(f"\nDo you chose to fight? (yes/no) ")
             if after_choiceA == "yes":
@@ -234,7 +237,7 @@ while outside_tomb:
                 print("Outside forces are working against you. Make the right decision.")
                 continue
     elif out_tomb.lower() == "b" or out_tomb.upper() == "B":
-            print(f"You're super chilling. You look at the trees and sky outside and get distracted by a bird. "
+            print(f"\nYou're super chilling. You look at the trees and sky outside and get distracted by a bird. "
                   f"\n Life is great.")
             after_choiceB = input("Do you want to look around or take the path? (A/C)")
             if after_choiceB.lower == "a" or after_choiceB.upper() == "A":
@@ -264,7 +267,7 @@ while outside_tomb:
                 print("Outside forces are working against you. Make the right decision.")
                 continue
     elif out_tomb.lower() == "c" or out_tomb.upper() == "C":
-            print(f"You look around the tomb for a good while. You managed to find and pickup a rusty shortsword"
+            print(f"\nYou look around the tomb for a good while. You managed to find and pickup a rusty shortsword"
                   f"\n hidden away in the overgrown grass.")
             player_inventory.append('shortsword')
             print(f"Your Inventory: {player_inventory}")
@@ -318,7 +321,7 @@ while outside_tomb:
                     print("Outside forces are working against you. Make the right decision.")
                     continue
     elif out_tomb.lower() == "d" or out_tomb.upper() == "D":
-            print(f"You take the pathway carefully and you managed to spot a wild boar in the middle of the road grazing."
+            print(f"\nYou take the pathway carefully and you managed to spot a wild boar in the middle of the road grazing."
                   f"\n It seems to be relatively strong.")
             after_choiceD = input(f"Do you want to fight the boar? (yes/no) ")
             if after_choiceD == "yes":
@@ -335,25 +338,56 @@ while outside_tomb:
                 print("Outside forces are working against you. Make the right decision.")
                 continue
     else:
-            print("Outside forces are working against you. Make the right decision.")
+            print("\nOutside forces are working against you. Make the right decision.")
             continue
 
-print("You continue down the overgrown path that is hidden away by dense brush. "
+print("\nYou continue down the overgrown path that is hidden away by dense brush. "
       "\nYou tear through the dense brush to be introduced to a well maintained road paved in brick.")
 print("\nYou are given the choice to get left or right.")
 
 while True:
     tomb_street = input('\nLeft or Right? (L/R) ')
     if tomb_street.lower() == "l" or tomb_street.upper() == "L":
-        print(f"You have chosen to go left. You continue to walk down the well paved path. After about an hour of "
+        print(f"\nYou have chosen to go left. You continue to walk down the well paved path. After about an hour of "
               f"walking a city comes into view. You decide it would be optimal to visit the city.")
         break
     elif tomb_street.lower() == "r" or tomb_street.upper() == "R":
-        print(f"You have chose to go right. You continue to walk down the well paved path. Nothing has come even"
+        print(f"\nYou have chosen to go right. You continue to walk down the well paved path. Nothing has come even"
               f" after three hours of walking. You see a wagon with a woman and her daughter up front.")
         wagon_0 = input(f"Do you confront the people? (yes/no)")
         if wagon_0 == 'yes':
             print(f"You confront the wagon with the woman and daughter. The woman stops the wagon visibly anxious"
                   f" at your sudden appearance. \nShe reaches inside the wagon and brings out a blade.")
+            print(options_chapter_1["options_1"])
+            wagon_yes = input(f"What do you say in response to this? (A/B/C/D)")
+            if wagon_yes.lower() == "a" or wagon_yes.upper() == "A":
+                print("\nThe woman in the wagon is very skeptical of you, but allows you to "
+                      "sit on the back end of the wagon away from here and your family.")
+                print("\nAfter about an hour of riding with the wagon a city comes into view."
+                      " You decide it would be optimal to visit the city.")
+                break
+            elif wagon_yes.lower() == "b" or wagon_yes.upper() == "B":
+                print("\nThe woman and the daughter next to her great weirded out by your sudden prostration "
+                      "The woman then allows you to sit in the back of the wagon. ")
+                print("\nAfter about an hour of riding with the wagon a city comes into view."
+                      " You decide it would be optimal to visit the city.")
+                break
+            elif wagon_yes.lower() == "c" or wagon_yes.upper() == "C":
+                print("\nThe woman listens to your explanation but doesn't understand a thing because you sound "
+                      "like a psychopath. She tells you there is a city the opposite way and you should be able"
+                      " to get there within 4 hours of walking. ")
+                print("\nYou decide to follow her advice and walk in the opposite direction.")
+                break
+            elif wagon_yes.lower() == "d" or wagon_yes.upper() == "D":
+                print("\nThe daughter witness you being a psychopath and are stunned. After a while they didn't"
+                      " care as they gained some distance from you.")
+                print("\n You reach the city in the opposite end of the road, but you're exhausted.")
+                break
+            else:
+                print("\nOutside forces are working against you. Make the right decision.")
+                continue
+
+print(f"\nYou enter the city with other traders and wanders in front of the city.")
+print(f"\n\n--Welcome to Beyruth City!--")
 
 
