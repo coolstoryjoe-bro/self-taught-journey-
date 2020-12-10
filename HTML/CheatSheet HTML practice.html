@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML Cheat Sheet</title>
+    </head>
+    <body>
+        <a href="blog.html">Go to Blog</a>
+        <hr>
+        <!-- Headings -->
+        <h1>Heading One</h1>
+        <h2>Heading Two</h2>
+        <h3>Heading Three</h3>
+        <h4>Heading Four</h4>
+        <h5>Heading Five</h5>
+        <h6>Heading Six</h6>
+
+        <!--Paragraph-->
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda aut cupiditate delectus
+            doloremque eaque esse et eum ex <strong>exercitationem fugiat, impedit maxime modi</strong> pariatur quae quidem
+            tenetur vel vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae cum, deserunt
+            dolore eius eligendi fugit impedit ipsum laboriosam minus nihil nisi non officia similique
+            sunt, tempore ullam. Quae, rem.
+        </p>
+         <p>
+             Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit. </em>Amet assumenda aut cupiditate delectus
+            doloremque eaque esse et eum ex exercitationem fugiat, impedit maxime modi pariatur quae quidem
+            tenetur vel vero. <a href="http://google.com" target="_blank"> Lorem ipsum dolor sit amet,</a> consectetur adipisicing elit. Animi beatae cum, deserunt
+            dolore eius eligendi fugit impedit ipsum laboriosam minus nihil nisi non officia similique
+            sunt, tempore ullam. Quae, rem.
+        </p>
+        <!-- list-->
+        <!-- This is an unordered list-->
+        <!-- Unordered Lists are usually used for website navigation/nav bar-->
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+        <!-- This is an ordered list-->
+        <ol>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ol>
+
+        <!-- tables-->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Joseph Abad</td>
+                    <td>Joseph@gmail.com</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>JDoe@gmail.com</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>Sarah Williams</td>
+                    <td>SWill@gmail.com</td>
+                    <td>25</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- "br" is a line break between the table and the input-->
+        <br>
+        <!-- "hr" puts a physical line in the page-->
+        <hr>
+        <br>
+
+        <!--Forms allows the user to enter in data or like a survey.-->
+        <!--"Action="process.php" method="post"" are more server side programming.-->
+        <form action="process.php" method="POST">
+            <!-- "div" defines a division of a section in an HTML doc. Kind of like a container, it contains html.-->
+            <div>
+                 <label>First Name</label>
+                <input type="text" name="firstName" placeholder="Enter first name">
+            </div>
+            <br>
+            <div>
+                <label>Last Name</label>
+                <input type="text" name="last-Name">
+            </div>
+            <br>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email">
+            </div>
+            <br>
+            <div>
+                <label>message</label>
+                <textarea name="message"></textarea>
+            </div>
+            <br>
+            <div>
+                <label>Gender</label>
+                <select name="Gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label>Age</label>
+                <input type="number" name="age" value="30">
+            </div>
+            <br>
+            <div>
+                <label>Birthday:</label>
+                <input type="date" name="Birthday">
+            </div>
+            <br>
+            <input type="submit" name="submit" value="submit">
+        </form>
+        <br>
+        <!-- Button-->
+        <button>Click Me</button>
+        <br>
+        <br>
+        <!--images-->
+        <a href="images/babyyoda.jpg"></a>
+        <img src="images/babyyoda.jpg" alt="My sample Image" width="500">
+
+        <!--Quotations-->
+        <blockquote cite="http://traversymedia.com">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, consectetur, ea harum impedit
+            itaque maiores minus nam, nobis officiis quod suscipit tenetur ullam!
+            Consectetur fuga iure mollitia quasi, quidem tenetur!
+        </blockquote>
+        <p>The <abbr title="World Wide Web">WWW</abbr> is awesome</p>
+        <p><cite>HTML Crash course</cite> by Brad Traversy</p>
+
+    </body>
+</html>
