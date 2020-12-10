@@ -1,6 +1,7 @@
 # This is a casual route story:
 # Chapter 1 project Dev:
-
+# TODO: Change player inventory to a dictionary with weapon classes and item classes.
+# TODO: Review the code to include player inventory dictionary.
 
 input_gender = input("Enter your gender: ")
 input_fname = input("Enter your first name: ")
@@ -29,10 +30,10 @@ options_chapter_1 = {
                   "C": "No need to fear me. I just came from a tomb 2 hours this way, I don't know where to go.",
                   "D": "Action: *You run away in the opposite direction.*",
                   },
-    "options_2": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
+    "options_2": {"A": "Blacksmith",
+                  "B": "General Goods Store",
+                  "C": "Guild House",
+                  "D": "The Inn",
                   },
     "options_3": {"A": "",
                   "B": "",
@@ -174,6 +175,17 @@ class rangedweapons:
         self.thrownrock = thrownrock
         self.musket = musket
 
+class defensiveitems:
+    def __init__(self, woodenshield, shortshield, tallshield, leatherarmor,
+                 chainmail, ironarmor, chainarmor):
+        self.woodenshield = woodenshield
+        self.shortshield = shortshield
+        self.tallshield = tallshield
+        self.leatherarmor = leatherarmor
+        self.chainmail = chainarmor
+        self.ironarmor = ironarmor
+        self.chainarmor = chainarmor
+
 class magic:
     def __init__(self, fire, ice, water, earth, void, light, dark, electric, necromancy, goddess, demon,):
         self.fire = fire
@@ -187,6 +199,35 @@ class magic:
         self.necromancy = necromancy
         self.goddess = goddess
         self.demon = demon
+
+# These are the item = money exchange rate.
+item_values = {
+    'cqc weapons': {
+        'longsword': '',
+        'mace': '',
+        'shortsword': '',
+        'dagger': '',
+        'staff': '',
+    },
+    'defensive items': {
+        'short shield': '',
+        'tall shield': '',
+
+    },
+    'ranged weapons': {
+
+    },
+    'animal drops': {
+        'boar hide': 5
+    },
+    'monster drops': {
+
+    },
+    'mineral drops': {
+
+    },
+
+}
 
 print("\n___Introduction___")
 print(f"\nYour name is {player_name.title()}, and your gender is {gender}. You will begin your journey"
@@ -389,5 +430,79 @@ while True:
 
 print(f"\nYou enter the city with other traders and wanders in front of the city.")
 print(f"\n\n--Welcome to Beyruth City!--")
+
+print(f"\n\nPresently the available facilities in the city is the --Blacksmith--, "
+      f"\nthe --General Goods Store--, "
+      f"\nthe --Guild House--, and"
+      f"--The Inn--")
+
+general_store_products = {}
+blacksmith_products = ['']
+guild_hall = ['adventure license']
+the_inn = {
+    'food': [''],
+    'services': ['']
+}
+
+Beyruth_active = True
+while Beyruth_active:
+    print(options_chapter_1["options_2"])
+    beyruth_choice_1 = input(f"Where would you like to go? (A/B/C/D) ")
+    if beyruth_choice_1.lower() == "a" or beyruth_choice_1.upper() == "A":
+        print("You have chosen to go to the blacksmith.")
+        print("The blacksmith has many types of weapons but none that you can afford at the moment."
+              " \nWould you like to talk to the person tending to the cashier? ")
+        after_beyrught_a = input("(yes/no)")
+        if after_beyrught_a == "yes":
+            print("")
+        elif after_beyrught_a == "no":
+            print("You have decided it was not the time to talk to the cashier just yet. You walk outside the door,"
+                  " and head to the nearest central square in the town.")
+            continue
+        else:
+            print("It seems like you didn't put in the correct input. Please try again. ")
+            continue
+    elif beyruth_choice_1.lower() == "b" or beyruth_choice_1.upper() == "B":
+        print("You have chosen to go to the General Goods Store.")
+        print("The General Goods Store has a great amount of items. You are able to buy things here, "
+              "as well as sell things that are currently in your inventory. "
+              "\nWould you like to take a look around? (yes/no)")
+        after_beyrught_b = input("(yes/no) ")
+        if after_beyrught_b == 'yes':
+            print("You have decided to take a look around.")
+            print(f"The General Store: ", general_store_products)
+            print("Would you like sell or buy? ")
+            gen_store_opt = input("(buy/sell) ")
+            if gen_store_opt == "buy":
+                print("")
+            elif gen_store_opt == "sell":
+                print("What would you like to sell?")
+                print(player_inventory)
+                sell_0 = input("You're selling: ")
+                player_inventory.pop(sell_0)
+                player_inventory.append('5 coins')
+
+        elif after_beyrught_b == "no":
+            print("You have decided it was not the time to look around the store just yet. You walk outside the door,"
+                  " and head to the nearest central square in the town.")
+            continue
+        else:
+            print("It seems like you didn't put in the correct input. Please try again. ")
+            continue
+
+    elif beyruth_choice_1.lower() == "c" or beyruth_choice_1.upper() == "C":
+        print("You have chosen to go to the Guild House.")
+        print("At the Guild House you are able to register yourself as an adventurer and "
+              "get an adventuring license."
+              "\nWould you like to talk to the front desk? (yes/no)")
+    elif beyruth_choice_1.lower() == "d" or beyruth_choice_1.upper() == "D":
+        print("You have chosen to go to The Inn")
+        print("The Inn has a bar like tavern on the first floor where food and alcohol can be served."
+              " You see a woman at the front desk registering other people. "
+              "\nWould you like to talk to the woman at the front desk? (yes/no")
+    else:
+        print(f"There are outside forces working against you. Make the right decision.")
+        continue
+
 
 
