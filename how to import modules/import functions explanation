@@ -1,0 +1,17 @@
+To import functions you need to create a module.
+A module is a file ending in '.py' that contains the code you want to import into your program.
+
+You're able to have a .py file with a bunch of functions and the 'import' command will /
+import the entire .py file with all the functions.
+    To separate the all the functions in the .py file, all you need to do is:
+        module_name.function_name()
+        from module_name import function_name
+        from module_name import function_1, function_2, function_3,
+
+
+    irl example:
+        pizza.make_pizza()
+
+        from pizza import make_pizza
+        pizza.make_pizza(16, 'pepperoni')
+        pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
