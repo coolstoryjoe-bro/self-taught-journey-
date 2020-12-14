@@ -1,0 +1,26 @@
+CSS means Cascading Style Sheets
+Not a programming language
+used alongside HTML, used for website layout and design.
+Able to extend the functionality of CSS with Sass/Less
+
+3 methods for adding CSS
+    Inline CSS: Directly in the HTML element. (Don't do this)
+    Internal CSS: Using <Style> tages within a single document.
+    External CSS: Linking an External .css file. 
+
+Colors in CSS:
+    Color Names
+    HTML5 Color Names
+    Hexadecimal
+    RGB
+Example:
+    body{
+        Color: red;
+        background: coral
+    }
+    h1{
+        color: #00ff00;
+    }
+    p{
+        color: rgb(0,0,255)
+    }
