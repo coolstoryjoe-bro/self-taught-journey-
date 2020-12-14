@@ -1,0 +1,54 @@
+HTML Cheat Sheet:
+
+Syntax and terms:
+
+HTML means: HyperText Markup Language.
+This is not a programming language and strictly for presentation.
+
+files must end with a '.html' extension.
+homepage should always be called 'index.html'.
+
+Tag Syntax:
+Element names surrounded by angle brackets.
+Normally comes in pairs (start tag and end tag)
+End tag is usually the same but with a forward slash.
+Some tags close themselves (Remnant of XHTML)
+
+Examples:
+<tagname>content</tagname>
+<h1>About Us</h1>
+<p>This is a paragraph</p>
+<br/> (self closing)
+<br> (Fine in html5)
+
+Inline vs block level elements:
+Inline Elements: (<span>, <img>, <a>)
+Do no start on a new line
+Take only the necessary width/
+Block Elements: (<div>, <h1> - <h6>, <p>, <form>)
+Start on a new line
+Take full width available.
+
+Using a link:
+<a href="link"> </a>
+Link with external website:
+<a href="link" target="_blank"> </a>
+
+Tag Attributes: <h1 title="My Company">content</tagname>
+<tagname attributename="attributevalue">content</tagname>
+All tags can have attributes
+Provide information about an element
+Placed within the start tag
+Key/value paries (id="someld")
+
+HTML5 Semantic Tags:
+A semantic element clearly describes its meaning to both the browser and the developer.
+<header></header>
+<footer></footer>
+<aside></aside>
+<main></main>
+<article></article>
+<nav></nav>
+<section></section>
+<details></details>
+
