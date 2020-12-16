@@ -3,6 +3,9 @@
 # TODO: Change player inventory to a dictionary with weapon classes and item classes.
 # TODO: Review the code to include player inventory dictionary.
 
+from passiveDamage import passiveDamage
+import Options1
+
 input_gender = input("Enter your gender: ")
 input_fname = input("Enter your first name: ")
 input_lname = input("Enter your last name: ")
@@ -18,152 +21,31 @@ gender.append(input_gender)
 
 # These are the player options throughout chapter 1:
 # Each option is different according to the story and what the player chooses.
-options_chapter_1 = {
-    "options_0": {"A": "Take the pathway nonchalantly.",
-                  "B": '"Ooooo. is that a bird?"',
-                  "C": "Search around for a bit.",
-                  "D": "Take the pathway carefully.",
-                  },
-    "options_1": {"A": "I'm just a wandering person, no reason to be frightened of me, "
-                       "do you mind if I tag along?",
-                  "B": "Action: *Gets on the ground and prostrates* 'Please take me to the nearby town!'",
-                  "C": "No need to fear me. I just came from a tomb 2 hours this way, I don't know where to go.",
-                  "D": "Action: *You run away in the opposite direction.*",
-                  },
-    "options_2": {"A": "Blacksmith",
-                  "B": "General Goods Store",
-                  "C": "Guild House",
-                  "D": "The Inn",
-                  },
-    "options_3": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_4": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_5": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_6": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_7": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_8": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_9": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_10": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_11": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_12": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_13": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_14": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_15": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_16": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_17": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_18": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_19": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-    "options_20": {"A": "",
-                  "B": "",
-                  "C": "",
-                  "D": "",
-                  },
-}
 
 
 class player:
-    def __init__(self, health, defense, equipdura):
-        self.health = health
-        self.defense = defense
-        self.equipdura = equipdura
+    def __init__(self):
+        self.player = player_0
+        self.health = 100
+        self.defense = 10
+        self.player_hitrate = 10
 
-class damage:
-    def __init__(self, poison, blunt, slash, burning, freezing, drowning, magic, random):
-        self.poison = poison
-        self.blunt = blunt
-        self.slash = slash
-        self.burning = burning
-        self.freezing = freezing
-        self.drowning = drowning
-        self.magic = magic
-        self.random = random
+class playerCondition(player):
+    """This class simply describes the condition of the player."""
+
+class playerStatus(player):
+    """This is the status of the player. """
+
 
 CQC_Weapons = ['longsword', 'mace', 'shortsword', 'dagger', 'punches', 'kicks', 'kitchenknife', 'treebranch', 'pan',
                'stick', 'rock', 'staff', 'random',]
 
 class CQCWeapons:
-    def __init__(self, longsword, mace, shortsword, dagger, punches, kicks, kitchenknife, treebranch, pan, stick, rock,
-                 staff, random):
-        self.longsword = longsword
-        self.mace = mace
-        self.shortsword = shortsword
-        self.dagger = dagger
-        self.punches = punches
-        self.kicks = kicks
-        self.kitchenknife = kitchenknife
-        self.treebranch = treebranch
-        self.pan = pan
-        self.stick = stick
-        self.rock = rock
-        self.staff =staff
-        self.random = random
+    def __init__(self):
+        self.base_damage = 1
+        self.base_durability = 100
+        self.base_hit_rate = 1
+
 
 ranged_weapons = ['longbow', 'shortbow', 'crossbow', 'thrownrock', 'musket',]
 
@@ -182,7 +64,7 @@ class defensiveitems:
         self.shortshield = shortshield
         self.tallshield = tallshield
         self.leatherarmor = leatherarmor
-        self.chainmail = chainarmor
+        self.chainmail = chainmail
         self.ironarmor = ironarmor
         self.chainarmor = chainarmor
 
