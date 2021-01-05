@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition.html</title>
+    <style type="text/css">
+    h1 {
+        color: black;
+        font-size: 300%;
+        transition: color 1s ease-in;
+    }
+    h1:hover {
+        color: red;
+    }
+    #box {
+        transition: all 1s ease-in; height: 100px; width: 100px; border: 1px solid black;
+    }
+    #box:hover {
+        transform: rotate(180deg);
+    }
+    </style>
+</head>
+<body>
+    <h1>Transition Demo</h1>
+    <p>Hover over the hedaing to change its color</p>
+    <div id="box">Box 1</div>
+    <div id="box">Box 2</div>
+    <p>Hover over the boxes to rotate them.</p>
+    
+</body>
+</html>
