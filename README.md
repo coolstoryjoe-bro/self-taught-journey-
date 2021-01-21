@@ -7,8 +7,8 @@ Don't forget your family, friends, and the time you have for yourself to keep yo
 Be smart with your time and learn along the way. 
 
 ""Language to do list:""
-1. HTML
-2. CSS
-3. JavaScript
+1. HTML *Check*
+2. CSS *Check*
+3. JavaScript *Check*
 4. Java
 
