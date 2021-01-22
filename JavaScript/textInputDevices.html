@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Input Devices</title>
+    <script>
+        // from otherText.html 
+        function processForm() {
+            //grab input from form
+            var txtNormal = document.getElementById ("txtNormal")
+            var pwd = document.getElementById ("pwd")
+            var hidden = document.getElementById ("hidden")
+            var txtArea = document.getElementById ("txtArea")
+
+            var normal = txtNormal.value
+            var password = pwd.value
+            var secret = hidden.value
+            var bigText = txtArea.value
+
+            //create output
+            var result = ""
+            result += "<dl> \n"
+            result += " <dt>normal</dt> \n"
+            result += " <dd>" + normal + "</dd> \n"
+            result += " \n"
+            result += " <dt>password</dt> \n"
+            result += " <dd>" + password + "</dd> \n"
+            result += " \n"
+            result += " <dt>secret</dt> \n"
+            result += " <dd>" + secret + "</dd> \n"
+            result += " \n"
+            result += " <dt>big text</dt>\n"
+            result += " <dd>" + bigText + "</dd> \n"
+            result += " </dl> \n"
+
+            var output = document.getElementById ("output")
+            output.innerHTML = result
+
+        } //end function
+
+    </script>
+</head>
+<body>
+    <h1>Text Input Devices</h1>
+    <form action="">
+        <fieldset>
+            <label for="">Normal Text Field</label>
+            <input type="text"
+            id="txtNormal">
+            <label for="">Password Field</label>
+            <input type="password"
+            id="pwd">
+            <label for="">Hidden</label>
+            <input type="hidden"
+            id="hidden"
+            value="I can't tell you!">
+            <textarea 
+            id="txtArea" 
+            cols="40" rows="10">
+            This is a big text area.
+            It can hold a lot of text. 
+            </textarea>
+            <button type="button"
+            onclick="processForm()">
+                Click Me
+            </button>
+        </fieldset>
+    </form>
+    <div id="output">
+
+    </div>
+</body>
+</html>
