@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else Demo.html</title>
+    <script>
+        function checkName() {
+            lblOutput = document.getElementById ("lblOutput")
+            txtInput = document.getElementById ("txtInput")
+
+            userName = txtInput.value
+            if (userName == "Tim Bernera-Lee") {
+                lblOutput.innerHTML = "Thanks for inventing HTML!"
+            } else if (userName == "Al Gore") {
+                lblOutput.innerHTML = "Thanks for investing the Internet"
+            } else if (userName == "Haon Wium Lie") {
+                lblOutput.innerHTML = "Thanks for inventing CSS"
+            } else {
+                lblOutput.innerHTML = "Do I know you?"
+            } // end if
+        } // end function
+    </script>
+</head>
+<body>
+    <h1>IF Demo</h1>
+    <form action="">
+        <fieldset>
+            <label for="" id="lblOutput">Please Enter Your Name. </label>
+            <input type="text"
+            id="txtInput"
+            value="Tim Bernera-Lee">
+            <button type="button"
+            onclick="checkName()">
+            Click Me
+            </button>
+        </fieldset>
+    </form>
+    
+</body>
+</html>
